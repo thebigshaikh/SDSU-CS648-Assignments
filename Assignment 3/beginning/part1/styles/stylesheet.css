@@ -26,26 +26,34 @@ p:first-of-type:first-letter{
     margin-left: 50px;
 }
 
-a[href^="http"]:visited{
-    color: red;
-    text-decoration: none;
-    
-}
-a[href^="http"]:active{
-    color:yellow;
-    text-decoration:double;
-    
-}
-a[href^="http"]:hover{
-    color: green;
-    text-decoration:wavy;
-}
+
+
 
 a[href^="http"]:link{
     color:blue;
     text-decoration: underline;
     
 }
+
+a[href^="http"]:visited{
+    color: red;
+    text-decoration: none;
+    
+}
+
+a[href^="http"]:hover{
+    color: green;
+    text-decoration:wavy;
+}
+
+
+
+a[href^="http"]:active{
+    color:yellow;
+    text-decoration:double;
+    
+}
+
 
 ul {
     list-style-type: none   ;
