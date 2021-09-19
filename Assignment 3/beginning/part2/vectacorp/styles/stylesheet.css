@@ -100,3 +100,7 @@ section img{
     border: none;
 }
 
+
+p[id^="v"]{
+    font-weight: bolder;
+}
