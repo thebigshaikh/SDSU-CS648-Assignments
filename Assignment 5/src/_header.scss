@@ -1,0 +1,56 @@
+header {
+    width:inherit;
+    clear:both;
+    text-align:center;
+    padding-top:40px;
+
+    img {
+        max-width:100%;
+        height:auto;
+        @include break($mediaBP2)    {margin-bottom:100px;}
+        @include break($mediaBP1)    {margin-bottom: 80px;}
+        
+    }
+
+    h1 {
+        color: $red_color;
+        font-weight:100;
+        font-size: $h1Size;
+        line-height:0;
+        @include break($mediaBP3)   {font-size: $mediaH1Font;}
+        @include break($mediaBP2)   {font-size: $h3Size;}
+        &:first-child {
+            @include break($mediaBP1) {
+               font-size:$fontSize2;
+               margin-bottom:20px;
+            }
+        }
+    }
+
+    h2 {
+        color: $white_color;
+        font-weight:900;
+        font-size: $h2Size;
+        line-height:0;
+        margin-bottom:70px;    
+        @include break($mediaBP3)   {font-size:$mediaH2Font;}   
+        @include break($mediaBP2)   {font-size:$fontSize1;} 
+        @include break($mediaBP1)   {font-size:$fontSize2;}
+    }
+
+    h3 {
+        color: $gray_color;
+        font-weight:400;
+        font-size: $h3Size;
+        line-height:0;
+        margin-bottom:50px;
+        @include break($mediaBP3)  {font-size: $mediaH2Font}
+        @include break($mediaBP1) {
+            color: $white_color;
+            font-size: $fontSize1;
+        }
+    }
+}
+
+
+    

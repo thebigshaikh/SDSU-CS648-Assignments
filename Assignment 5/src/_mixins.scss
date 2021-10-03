@@ -1,0 +1,42 @@
+@mixin logo($width: 100px, $height: 100px, $logo_url: '#', $repeat: no-repeat, $xpos: 0, $ypos: 0, $float: left, $display: block, $margin: 0) {
+    width: $width;
+    height: $height;
+    background: url($logo_url); 
+    background-repeat: $repeat;
+    background-position: $xpos $ypos;
+    float: $float;
+    display: $display;
+    margin: $margin;
+
+}
+
+@mixin socialMedia($image_url: '#', $xpos: $social_media_px_x, $ypos: $social_media_px_y) {
+    background: url($image_url);
+    background-position: $xpos $ypos;
+}
+
+@mixin navMenu($width: 400px, $height: 200px, $float: left, $text-align: right) {
+    width: $width;
+    height: $height;
+    float: $float;
+    text-align: $text-align;
+    
+}
+
+@mixin headerContent($width: 400px, $margin_top_bottom: auto, $margin_left_right: auto) {
+    width:$width;
+    margin:$margin_top_bottom $margin_left_right;
+}
+
+@mixin testimonials($width: 100px, $float: right) {
+    width: $width;
+    float: $float;
+}
+
+@mixin break($length: 100px) {
+    @media screen and (max-width:$length) {
+        @content;
+    }
+}
+
+ 

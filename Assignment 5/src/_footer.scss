@@ -1,0 +1,56 @@
+.greybar {
+    width:100%;
+    height:90px;
+    background: $graybar_color;
+    clear:both;
+    padding-top:30px;
+    @include break($mediaBP1)   {display: none;}
+}
+
+footer {
+    width:100%;
+    height:120px;
+    text-align:center;
+    background: $footer_background_color;
+    
+    color: $white_color;
+    padding-top:50px;
+    @include break($mediaBP1)     {text-align: center;}
+
+    p {
+        @include break($mediaBP1) {
+            float: none;
+            margin: 0;
+        }
+    }
+
+    img {
+        @include break($mediaBP1) {
+            float: none;
+            margin: 0;
+
+        }
+    }
+}
+
+.social-media {
+    margin:0 auto;
+    width:165px;
+
+    div {
+        float:left;
+        margin-right:5px;
+                
+        &.one     {@include socialMedia($social_media_img, ($social_media_px_x * 0), $social_media_px_y);}
+        &.two 	  {@include socialMedia($social_media_img, ($social_media_px_x * 1), $social_media_px_y);}
+        &.three   {@include socialMedia($social_media_img, ($social_media_px_x * 2), $social_media_px_y);}
+        &.four 	  {@include socialMedia($social_media_img, ($social_media_px_x * 3), $social_media_px_y);}
+    }
+
+    a {
+        width:36px;
+        height:36px;
+        display:block;
+        text-indent:-9999px;
+    }
+}
