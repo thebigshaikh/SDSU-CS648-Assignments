@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery Events</title>
+    <script src='js/jquery-3.6.0.min.js'></script>
+    <script>
+        $(document).ready(function() {            
+            $("#button1").click(function() {
+                window.alert("Button has been clicked");
+            });
+
+            $("#button2").bind('click', function() {
+                window.alert("Button has been clicked by Bind");
+            });
+            
+            $("#button3").on('click', function() {
+                window.alert("Button has been clicked ");
+            });
+
+            $('.button4').on('click', function() {
+                window.alert("Button has been clicked");
+            });
+
+            $('#div1').width('400px')
+                      .height('400px')
+                      .css('background-color','silver')
+                      .on({
+                          'mouseenter' : function() {
+                            //.window.alert("You hovered on the div");
+                            $('#userActivity').text("You hovered on the div");
+                          },
+                          'click' : function() {
+                            //window.alert("You clicked on the div");
+                            $('#userActivity').text("You clicked on the div");
+                          },
+                          'mouseleave' : function() {
+                            //window.alert("You left the div");
+                            $('#userActivity').text("You left the div");
+                          }
+                      });
+            
+            $('#moduleMediaLink').on('click', function(event) {
+                event.preventDefault();
+                $(this).css('color','red');
+                window.alert(event.target.nodeName+' triggered the event');
+            });
+            
+            $(function() {
+                $(window).resize(function () {
+                    $('#displayWidhtHeight').text("Width : " + $(window).width() + "  Height : " + $(window).height());
+                });
+            });
+            
+            $('#textField').on({
+                'focus' : function() {
+                    $('#textField').css('background-color','#D3D3D3');
+                },
+                'blur' : function() {
+                    $('#textField').css('background-color','#FFFFFF');
+                },
+            });
+
+            $('#form1').on('submit', function(event) {
+                event.preventDefault();
+                var name = $('#name').val();
+                if(name){
+                    $('#name').css('border','1px solid green');
+                }
+                else {
+                    $('#name').css('border','1px solid red');
+                    window.alert('Please enter the name');
+                }
+                var email = $('#email').val();
+                if(email) {
+                    $('#email').css('border','1px solid green');
+                }
+                else {
+                    $('#email').css('border','1px solid red');
+                    window.alert('Please enter the email');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+        <button id="button1">Click Me</button>
+        <button id="button2">Click Me with bind()</button>
+        <button id="button3">Click Me with on()</button>
+        <button class="button4">Button 1</button>
+        <button class="button4">Button 2</button><br><br>
+        <div id="div1"></div>
+        <span id="userActivity"></span><br><br>
+        <a id="moduleMediaLink" href="http://modulemedia.com">ModuleMedia</a><br><br>
+        <div id="displayWidhtHeight"></div><br><br>
+        <input id="textField" type="text"><br><br>
+        <strong>Form</strong><br>
+        <form id="form1">
+            <input id="name" placeholder="name" type="text">
+            <span id="noName"></span><br><br>
+            <input id="email" placeholder="email" type="email">
+            <span id="noEmail"></span><br><br>
+            <input type="submit">
+        </form>
+</body>
+</html>
